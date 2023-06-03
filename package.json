@@ -1,0 +1,29 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "Playground for learning react",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajkiranpalla/React-learning.git"
+  },
+  "author": "rajkiranpalla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajkiranpalla/React-learning/issues"
+  },
+  "homepage": "https://github.com/rajkiranpalla/React-learning#readme",
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.9.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
