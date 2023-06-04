@@ -1,4 +1,5 @@
 // with options
 {
-    "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
-  }
+    //enable it to remove the console.logs from our code
+    // "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+}
