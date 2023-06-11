@@ -1,26 +1,72 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+/*
+Header
+    - logo
+    - Nav items
+    -cart
 
-// react element
-const header1 = <h1>heading1</h1>;
+Body
+    -Search Bar
+    - Restaurant list
+        - Restaurant card (many cards)
+            - Image
+            - Name
+            - Rating
+            -Cusines
+Footer
+    - Links
+    - copyright etc
+*/
 
-// functional component
-const Header2 = () => (
-    <h1>heading2</h1>
-)
+const Title =() => (
+    <a href="/">
+    <img className="logo" alt="logo" src="https://st2.depositphotos.com/1037759/10068/v/950/depositphotos_100680876-stock-illustration-food-logo-template-home-food.jpg" />
+    </a>
+   )
 
-// functional component uses react element and another react functional component
-const HeaderElement = () => (
-    <div>
-    {header1}
-    <Header2/>
-    </div>
-)
 
-// will be removed in build as we are using bael plugin to remove console.logs
-console.log(HeaderElement);
+const Header = () => {
+    return (
+        <div className="header">
+            <Title/>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <h4>Body</h4>
+    )
+}
+
+const Footer = () => {
+    return (
+        <h4>Footer</h4>
+    )
+}
+
+
+const AppLayout = () => {
+    return (
+        <>
+        <Header/>
+        <Body/>
+        <Footer/>
+        </>
+    )
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderElement/>);
+root.render(<AppLayout/>);
