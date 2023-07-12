@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Title = () => (
   <a href="/">
     <img
@@ -10,6 +12,9 @@ const Title = () => (
 
 // Composing Comopnentss
 const Header = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className="header">
       <Title />
@@ -19,6 +24,9 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          {
+            isLoggedIn ? <button type="button" onClick={() => setIsLoggedIn(false)}>logOut</button> : <button type="button" onClick={() => setIsLoggedIn(true)}>login</button> 
+          }
         </ul>
       </div>
     </div>
