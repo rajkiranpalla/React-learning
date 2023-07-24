@@ -10,8 +10,8 @@ const RestaurantMenu = () => {
     const restaurantInfo = useRestaurantMenu(resId);
 
     return (!restaurantInfo) ? <Shimmer></Shimmer> : (
-        <section className="menu">
-            <div>
+        <section className="flex p-4 m-4">
+            <div className="pr-4">
             <p>Restaurant Menu : {resId}</p>
             <h1>{restaurantInfo?.name}</h1>
             <img src={IMG_CDN_URL+restaurantInfo?.cloudinaryImageId}></img>
