@@ -10,13 +10,8 @@ const useRestaurantMenu = (resId) => {
 
     const formatRestaurantData = (jsonData) => {
         let restaurantData = jsonData?.data?.cards[0]?.card?.card?.info;
-        let rawData = jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-        const restmenu = rawData.reduce((menus, currentValue) => {
-            const itemData = currentValue?.card?.card?.itemCards;
-            if(itemData) {menus.push(...itemData)};
-            return menus;
-        }, []);
-        restaurantData.menus = restmenu;
+        let categories = jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+        restaurantData.categories = categories;
         console.log(restaurantData);
         return restaurantData;
     }
