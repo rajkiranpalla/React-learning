@@ -1,8 +1,9 @@
 import RestrauntCard, {withPromtedLabel} from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../hooks/useOnlinestatus";
+import UserContext from "../context/UserContext";
 
 const filterRestaurantData = (searchText, allRestaurants) => {
   return allRestaurants.filter((restaurant) =>
@@ -17,6 +18,8 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   const RestaurantCardPromoted = withPromtedLabel(RestrauntCard);
+
+  const {setUserName} =  useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -59,6 +62,16 @@ const Body = () => {
           >
             Search
           </button>
+
+          <input
+            type="text"
+            className="border border-solid border-black"
+            placeholder="update user name"
+            onChange={(e) => {
+              setUserName(e.target.value);
+              }}
+          />
+          
         </div>
       </div>
       <div className="flex flex-wrap">
